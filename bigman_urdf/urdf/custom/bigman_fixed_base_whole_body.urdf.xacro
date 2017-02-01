@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="bigman">
+  <!--
+  ROS urdf definition of the BIGMAN humanoid robot by Istituto Italiano di Tecnologia
+  
+  Author: Enrico Mingo
+  
+  This file groups files to use BIGMAN in GAZEBO
+  
+  -->
+
+  <!-- Uncomment this to have the robot rigidly connected to the world -->
+
+  <link name="world"/>
+  
+  <joint name="world_base_joint" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+  </joint>
+  
+  <origin xyz="0.0 0.0 1.17" rpy="0 0 0" /> 
+
+  <!-- ROBOT -->
+
+  <xacro:include filename="$(find bigman_urdf)/urdf/bigman.urdf.xacro" />
+
+<xacro:property name="BIGMAN_UPPER_BODY" value="true" />
+
+<xacro:if value="${BIGMAN_UPPER_BODY}">
+       <xacro:unless value="${BIGMAN_LEGS}">
+
+		  <link name="world"/>
+		  
+		   <joint name="fixed" type="fixed">
+		    <parent link="world"/>
+		    <child link="base_link"/>
+		  </joint>
+		  
+		  <origin xyz="0.0 0.0 1.5" rpy="0 0 0" />
+
+	</xacro:unless>
+</xacro:if>
+
+
+<xacro:if value="${BIGMAN_LEGS}">
+  <origin xyz="0.0 0.0 1.12" rpy="0 0 0" />
+
+  <xacro:include filename="$(find bigman_urdf)/urdf/gazebo/microstrain_3dmgx2_imu.gazebo.xacro" />
+</xacro:if>
+
+  <xacro:include filename="$(find bigman_urdf)/urdf/gazebo/bigman_gazebo_ros_control.gazebo.xacro" />
+
+  <xacro:include filename="$(find bigman_urdf)/urdf/gazebo/force_torque.gazebo.xacro" />
+
+  <xacro:include filename="$(find bigman_urdf)/urdf/gazebo/bigman.gazebo.xacro" />
+
+  <xacro:include filename="$(find bigman_urdf)/urdf/gazebo/bumper.gazebo.xacro" />
+
+  <xacro:include filename="$(find bigman_urdf)/urdf/gazebo/bigman_materials.gazebo.xacro" />
+  
+</robot>
+

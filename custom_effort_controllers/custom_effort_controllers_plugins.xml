@@ -1,0 +1,39 @@
+<library path="lib/libcustom_effort_controllers">
+
+  <class name="custom_effort_controllers/JointPositionController" type="custom_effort_controllers::JointPositionController" base_class_type="controller_interface::ControllerBase">
+    <description>
+      The JointPositionController tracks position commands. It expects a EffortJointInterface type of hardware interface.
+    </description>
+  </class>
+
+  <class name="custom_effort_controllers/JointVelocityController" type="custom_effort_controllers::JointVelocityController" base_class_type="controller_interface::ControllerBase">
+    <description>
+      The JointVelocityController tracks velocity commands. It expects a EffortJointInterface type of hardware interface.
+    </description>
+  </class>
+
+  <class name="custom_effort_controllers/JointEffortController" type="custom_effort_controllers::JointEffortController" base_class_type="controller_interface::ControllerBase">
+    <description>
+      The JointEffortController tracks effort commands. It expects a EffortJointInterface type of hardware interface.
+    </description>
+  </class>
+
+  <class name="custom_effort_controllers/JointGroupEffortController" type="custom_effort_controllers::JointGroupEffortController" base_class_type="controller_interface::ControllerBase">
+    <description>
+      The JointGroupEffortController tracks effort commands for a set of joints. It expects a EffortJointInterface type of hardware interface.
+    </description>
+  </class>
+
+    <class name="custom_effort_controllers/JointPositionTorqueController" type="custom_effort_controllers::JointPositionTorqueController" base_class_type="controller_interface::ControllerBase">
+    <description>
+      The JointPositionTorqueController tracks position commands(feedback) and effort commands(feedforward). It expects a EffortJointInterface type of hardware interface.
+    </description>
+  </class>
+  
+  <class name="custom_effort_controllers/JointGroupPositionEffortController" type="custom_effort_controllers::JointGroupPositionEffortController" base_class_type="controller_interface::ControllerBase">
+    <description>
+      The JointGroupPositionEffortController tracks position commands(feedback) and effort commands(feedforward) for multiple joints. It expects a EffortJointInterface type of hardware interface.
+    </description>
+  </class>
+  
+</library>

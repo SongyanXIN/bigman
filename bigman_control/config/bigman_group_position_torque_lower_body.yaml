@@ -1,0 +1,60 @@
+bigman:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 1000  
+  
+  # Group Position Torque Controllers ---------------------------------------
+  group_position_torque_controller:
+    type: custom_effort_controllers/JointGroupPositionEffortController
+    joints: [LHipLat,
+LHipYaw,
+LHipSag,
+LKneeSag,
+LAnkSag,
+LAnkLat,
+RHipLat,
+RHipYaw,
+RHipSag,
+RKneeSag,
+RAnkSag,
+RAnkLat]
+             
+    ps: [6500.0,
+1063.0,
+6500.0,
+6500.0,
+6500.0,
+6500.0,
+6500.0,
+1063.0,
+6500.0,
+6500.0,
+6500.0,
+6500.0]
+            
+    is: [0.0,
+0.0,
+0.0,
+0.0,
+0.0,
+0.0,
+0.0,
+0.0,
+0.0,
+0.0,
+0.0,
+0.0]
+              
+    ds: [10.0,
+10.0,
+10.0,
+10.0,
+10.0,
+10.0,
+10.0,
+10.0,
+10.0,
+10.0,
+10.0,
+10.0]

@@ -1,0 +1,4 @@
+bigman:
+  # Names of the feet
+  feet: [LFoot, RFoot, LSoftHand, RSoftHand]
+

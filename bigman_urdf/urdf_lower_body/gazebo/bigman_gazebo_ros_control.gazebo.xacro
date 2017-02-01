@@ -1,0 +1,440 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+
+  <!-- ros_control plugin -->
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/bigman</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+    </plugin>
+  </gazebo>
+
+
+<!-- ************ Transmition ************ -->
+  
+ <xacro:if value="${BIGMAN_UPPER_BODY}"> 
+  
+  
+		<transmission name="tran29">
+		  <type>transmission_interface/SimpleTransmission</type>
+		  <joint name="WaistLat">
+		    <hardwareInterface>EffortJointInterface</hardwareInterface>
+		  </joint>
+		  <actuator name="motor_WaistLat">
+		    <hardwareInterface>EffortJointInterface</hardwareInterface>
+		    <mechanicalReduction>1</mechanicalReduction>
+		  </actuator>
+		</transmission>
+
+		<transmission name="tran30">
+		  <type>transmission_interface/SimpleTransmission</type>
+		  <joint name="WaistSag">
+		    <hardwareInterface>EffortJointInterface</hardwareInterface>
+		  </joint>
+		  <actuator name="motor_WaistSag">
+		    <hardwareInterface>EffortJointInterface</hardwareInterface>
+		    <mechanicalReduction>1</mechanicalReduction>
+		  </actuator>
+		</transmission>
+
+
+		<transmission name="tran31">
+		  <type>transmission_interface/SimpleTransmission</type>
+		  <joint name="WaistYaw">
+		    <hardwareInterface>EffortJointInterface</hardwareInterface>
+		  </joint>
+		  <actuator name="motor_WaistYaw">
+		    <hardwareInterface>EffortJointInterface</hardwareInterface>
+		    <mechanicalReduction>1</mechanicalReduction>
+		  </actuator>
+		</transmission>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+	      <transmission name="tran1">
+		  <type>transmission_interface/SimpleTransmission</type>
+		  <joint name="NeckYawj">
+		    <hardwareInterface>EffortJointInterface</hardwareInterface>
+		  </joint>
+		  <actuator name="motor_NeckYawj">
+		    <hardwareInterface>EffortJointInterface</hardwareInterface>
+		    <mechanicalReduction>1</mechanicalReduction>
+		  </actuator>
+		</transmission>
+
+		<transmission name="tran2">
+		  <type>transmission_interface/SimpleTransmission</type>
+		  <joint name="NeckPitchj">
+		    <hardwareInterface>EffortJointInterface</hardwareInterface>
+		  </joint>
+		  <actuator name="motor_NeckPitchj">
+		    <hardwareInterface>EffortJointInterface</hardwareInterface>
+		    <mechanicalReduction>1</mechanicalReduction>
+		  </actuator>
+		</transmission>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+		<transmission name="tran3">
+		  <type>transmission_interface/SimpleTransmission</type>
+		  <joint name="LShSag">
+		    <hardwareInterface>EffortJointInterface</hardwareInterface>
+		  </joint>
+		  <actuator name="motor_LShSag">
+		    <hardwareInterface>EffortJointInterface</hardwareInterface>
+		    <mechanicalReduction>1</mechanicalReduction>
+		  </actuator>
+		</transmission>
+
+		<transmission name="tran4">
+		  <type>transmission_interface/SimpleTransmission</type>
+		  <joint name="LShLat">
+		    <hardwareInterface>EffortJointInterface</hardwareInterface>
+		  </joint>
+		  <actuator name="motor_LShLat">
+		    <hardwareInterface>EffortJointInterface</hardwareInterface>
+		    <mechanicalReduction>1</mechanicalReduction>
+		  </actuator>
+		</transmission>
+
+		<transmission name="tran5">
+		  <type>transmission_interface/SimpleTransmission</type>
+		  <joint name="LShYaw">
+		    <hardwareInterface>EffortJointInterface</hardwareInterface>
+		  </joint>
+		  <actuator name="motor_LShYaw">
+		    <hardwareInterface>EffortJointInterface</hardwareInterface>
+		    <mechanicalReduction>1</mechanicalReduction>
+		  </actuator>
+		</transmission>
+
+		<transmission name="tran6">
+		  <type>transmission_interface/SimpleTransmission</type>
+		  <joint name="LElbj">
+		    <hardwareInterface>EffortJointInterface</hardwareInterface>
+		  </joint>
+		  <actuator name="motor_LElbj">
+		    <hardwareInterface>EffortJointInterface</hardwareInterface>
+		    <mechanicalReduction>1</mechanicalReduction>
+		  </actuator>
+		</transmission>
+
+		<transmission name="tran7">
+		  <type>transmission_interface/SimpleTransmission</type>
+		  <joint name="RShSag">
+		    <hardwareInterface>EffortJointInterface</hardwareInterface>
+		  </joint>
+		  <actuator name="motor_RShSag">
+		    <hardwareInterface>EffortJointInterface</hardwareInterface>
+		    <mechanicalReduction>1</mechanicalReduction>
+		  </actuator>
+		</transmission>
+
+		<transmission name="tran8">
+		  <type>transmission_interface/SimpleTransmission</type>
+		  <joint name="RShLat">
+		    <hardwareInterface>EffortJointInterface</hardwareInterface>
+		  </joint>
+		  <actuator name="motor_RShLat">
+		    <hardwareInterface>EffortJointInterface</hardwareInterface>
+		    <mechanicalReduction>1</mechanicalReduction>
+		  </actuator>
+		</transmission>
+
+		<transmission name="tran9">
+		  <type>transmission_interface/SimpleTransmission</type>
+		  <joint name="RShYaw">
+		    <hardwareInterface>EffortJointInterface</hardwareInterface>
+		  </joint>
+		  <actuator name="motor_RShYaw">
+		    <hardwareInterface>EffortJointInterface</hardwareInterface>
+		    <mechanicalReduction>1</mechanicalReduction>
+		  </actuator>
+		</transmission>
+
+		<transmission name="tran10">
+		  <type>transmission_interface/SimpleTransmission</type>
+		  <joint name="RElbj">
+		    <hardwareInterface>EffortJointInterface</hardwareInterface>
+		  </joint>
+		  <actuator name="motor_RElbj">
+		    <hardwareInterface>EffortJointInterface</hardwareInterface>
+		    <mechanicalReduction>1</mechanicalReduction>
+		  </actuator>
+		</transmission>
+
+		<transmission name="tran11">
+		  <type>transmission_interface/SimpleTransmission</type>
+		  <joint name="LForearmPlate">
+		    <hardwareInterface>EffortJointInterface</hardwareInterface>
+		  </joint>
+		  <actuator name="motor_LForearmPlate">
+		    <hardwareInterface>EffortJointInterface</hardwareInterface>
+		    <mechanicalReduction>1</mechanicalReduction>
+		  </actuator>
+		</transmission>
+
+		<transmission name="tran12">
+		  <type>transmission_interface/SimpleTransmission</type>
+		  <joint name="LWrj1">
+		    <hardwareInterface>EffortJointInterface</hardwareInterface>
+		  </joint>
+		  <actuator name="motor_LWrj1">
+		    <hardwareInterface>EffortJointInterface</hardwareInterface>
+		    <mechanicalReduction>1</mechanicalReduction>
+		  </actuator>
+		</transmission>
+
+
+		<transmission name="tran13">
+		  <type>transmission_interface/SimpleTransmission</type>
+		  <joint name="LWrj2">
+		    <hardwareInterface>EffortJointInterface</hardwareInterface>
+		  </joint>
+		  <actuator name="motor_LWrj2">
+		    <hardwareInterface>EffortJointInterface</hardwareInterface>
+		    <mechanicalReduction>1</mechanicalReduction>
+		  </actuator>
+		</transmission>
+
+
+		<transmission name="tran14">
+		  <type>transmission_interface/SimpleTransmission</type>
+		  <joint name="RForearmPlate">
+		    <hardwareInterface>EffortJointInterface</hardwareInterface>
+		  </joint>
+		  <actuator name="motor_RForearmPlate">
+		    <hardwareInterface>EffortJointInterface</hardwareInterface>
+		    <mechanicalReduction>1</mechanicalReduction>
+		  </actuator>
+		</transmission>
+
+
+		<transmission name="tran15">
+		  <type>transmission_interface/SimpleTransmission</type>
+		  <joint name="RWrj1">
+		    <hardwareInterface>EffortJointInterface</hardwareInterface>
+		  </joint>
+		  <actuator name="motor_RWrj1">
+		    <hardwareInterface>EffortJointInterface</hardwareInterface>
+		    <mechanicalReduction>1</mechanicalReduction>
+		  </actuator>
+		</transmission>
+
+
+		<transmission name="tran16">
+		  <type>transmission_interface/SimpleTransmission</type>
+		  <joint name="RWrj2">
+		    <hardwareInterface>EffortJointInterface</hardwareInterface>
+		  </joint>
+		  <actuator name="motor_RWrj2">
+		    <hardwareInterface>EffortJointInterface</hardwareInterface>
+		    <mechanicalReduction>1</mechanicalReduction>
+		  </actuator>
+		</transmission>
+
+
+  
+  
+
+  </xacro:if>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <transmission name="tran17">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="LHipLat">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_LHipLat">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+
+  <transmission name="tran18">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="LHipYaw">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_LHipYaw">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+
+  <transmission name="tran19">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="LHipSag">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_LHipSag">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+
+  <transmission name="tran20">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="LKneeSag">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_LKneeSag">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+
+  <transmission name="tran21">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="LAnkSag">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_LAnkSag">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+
+  <transmission name="tran22">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="LAnkLat">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_LAnkLat">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="tran23">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="RHipLat">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_RHipLat">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+
+  <transmission name="tran24">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="RHipYaw">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_RHipYaw">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="tran25">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="RHipSag">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_RHipSag">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+
+  <transmission name="tran26">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="RKneeSag">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_RKneeSag">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="tran27">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="RAnkSag">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_RAnkSag">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="tran28">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="RAnkLat">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_RAnkLat">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+</robot>

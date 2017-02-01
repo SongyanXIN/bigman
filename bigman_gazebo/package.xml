@@ -1,0 +1,20 @@
+<package>
+  <name>bigman_gazebo</name>
+  <version>0.1.0</version>
+  <description>bigman_gazebo</description>
+  <maintainer email="xinsongyan@gmail.com">xinsongyan</maintainer>
+
+  <license>BSD</license>
+
+
+  <author email="xinsongyan@gmail.com">xinsongyan</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <run_depend>bigman_urdf</run_depend>
+  <run_depend>bigman_control</run_depend> 
+  <run_depend>gazebo_ros</run_depend> 
+
+  <export>
+  </export>
+</package>

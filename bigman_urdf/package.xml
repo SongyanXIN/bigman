@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package>
+  <name>bigman_urdf</name>
+  <version>0.0.0</version>
+  <description>The bigman_urdf package</description>
+
+
+  <maintainer email="xinsongyan@gmail.com">xinsongyan</maintainer>
+
+  <license>BSD</license>
+
+  <author email="xinsongyan@gmail.com">xinsongyan</author>
+
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <export>
+  </export>
+</package>

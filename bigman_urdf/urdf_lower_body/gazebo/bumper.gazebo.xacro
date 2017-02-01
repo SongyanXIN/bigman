@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+
+  <!-- gazebo_ros_bumper plugin -->
+<gazebo reference="RFoot">
+	<sensor type="contact" name="box_bumper_sensor">
+		  <always_on>true</always_on>
+		  <update_rate>50</update_rate>
+		  <contact>
+		    <collision>RFoot_collision</collision>
+		  </contact>
+
+		  <plugin name="RFoot_bumper_plugin" filename="libgazebo_ros_bumper.so">
+		    <bumperTopicName>/bigman/sensor/bumper/RFoot_bumper</bumperTopicName>
+		    <frameName>base_link</frameName>
+		  </plugin>       
+	</sensor>
+</gazebo>
+
+  <!-- gazebo_ros_bumper plugin -->
+<gazebo reference="LFoot">
+	<sensor type="contact" name="box_bumper_sensor">
+		  <always_on>true</always_on>
+		  <update_rate>50</update_rate>
+		  <contact>
+		    <collision>LFoot_collision</collision>
+		  </contact>
+
+		  <plugin name="LFoot_bumper_plugin" filename="libgazebo_ros_bumper.so">
+		    <bumperTopicName>/bigman/sensor/bumper/LFoot_bumper</bumperTopicName>
+		    <frameName>base_link</frameName>
+		  </plugin>       
+	</sensor>
+</gazebo>
+
+
+</robot>
